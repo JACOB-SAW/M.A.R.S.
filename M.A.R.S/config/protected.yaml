@@ -1,0 +1,23 @@
+# PROTECTED CORE: nothing inside the running system may modify these values.
+# Only a human edits this file, and only between runs.
+
+param_bounds:
+  risk_tolerance: [0.0, 1.0]
+  exploration: [0.0, 0.5]
+  horizon: [1.0, 6.0]
+  safety: [0.0, 1.0]
+  novelty: [0.0, 1.0]
+  efficiency: [0.0, 1.0]
+
+# Max change to any parameter in one cycle, as a fraction of its range.
+max_param_delta: 0.15
+
+population:
+  min: 3
+  max: 12
+
+max_steps_per_cycle: 500
+max_cycles_per_run: 10000
+
+# Changing the system's purpose always goes through the approval gate.
+require_approval_for_purpose_change: true

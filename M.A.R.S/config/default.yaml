@@ -1,0 +1,65 @@
+seed: 42
+
+environment:
+  size: 10
+  hazards: 8
+  steps_per_cycle: 100
+
+population:
+  elite_fraction: 0.34
+  mutation_rate: 0.5
+  mutation_scale: 0.15
+
+reputation:
+  decay: 0.8
+  min_weight: 0.1
+  sensitivity: 3.0
+
+purpose:
+  trial_cycles: 4
+  exploit_cycles: 8
+
+# Starting agents: each has a different bias.
+agent_templates:
+  - name: cautious_skeptic
+    risk_tolerance: 0.1
+    exploration: 0.05
+    horizon: 5.0
+    safety: 0.9
+    novelty: 0.1
+    efficiency: 0.5
+  - name: curious_explorer
+    risk_tolerance: 0.6
+    exploration: 0.25
+    horizon: 2.0
+    safety: 0.3
+    novelty: 0.9
+    efficiency: 0.3
+  - name: pragmatist
+    risk_tolerance: 0.4
+    exploration: 0.05
+    horizon: 3.0
+    safety: 0.5
+    novelty: 0.2
+    efficiency: 0.9
+  - name: gambler
+    risk_tolerance: 0.95
+    exploration: 0.15
+    horizon: 1.0
+    safety: 0.1
+    novelty: 0.5
+    efficiency: 1.0
+  - name: planner
+    risk_tolerance: 0.3
+    exploration: 0.1
+    horizon: 6.0
+    safety: 0.6
+    novelty: 0.3
+    efficiency: 0.7
+  - name: wanderer
+    risk_tolerance: 0.5
+    exploration: 0.4
+    horizon: 3.0
+    safety: 0.4
+    novelty: 0.7
+    efficiency: 0.2
